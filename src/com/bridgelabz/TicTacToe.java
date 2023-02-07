@@ -67,7 +67,35 @@ public class TicTacToe{
         }else
             putValue();
     }
-    
+    static boolean win(){
+        return ((BOARD[0][0]+BOARD[0][1]+BOARD[0][2]==player*3)
+                ||(BOARD[1][0]+BOARD[1][1]+BOARD[1][2]==player*3)
+                ||(BOARD[2][0]+BOARD[2][1]+BOARD[2][2]==player*3)
+                ||(BOARD[0][0]+BOARD[1][0]+BOARD[2][0]==player*3)
+                ||(BOARD[0][1]+BOARD[1][1]+BOARD[2][1]==player*3)
+                ||(BOARD[0][2]+BOARD[1][2]+BOARD[2][2]==player*3)
+                ||(BOARD[0][0]+BOARD[1][1]+BOARD[2][2]==player*3)
+                ||(BOARD[2][0]+BOARD[1][1]+BOARD[0][2]==player*3)
+    }
+    static void play(){
+        initBoard();
+        while(isEmpty){
+            System.out.println("Player turn");
+            putValue();
+            disBoard();
+            if(win)) {
+                System.out.println("Computer turn");
+                putValue();
+                disBoard();
+                if(win()){
+                    System.out.println("Computer won");
+                    return;
+                }
+                player = 0;
+            }
+            
+        }
+    }
     
 
 

@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import java.util.Scanner;
+
 public class TicTacToe{
     static int player = 0;
     static int BOARD[][] = new int[3][3];
@@ -40,6 +42,32 @@ public class TicTacToe{
         }
         System.out.println("--------------");
     }
+    static void putValue(){
+        int i;
+        int j;
+        if(player % 2 ==1){
+            i = (int)(Math.random()*10)%3;
+            j = (int)(Math.random()*10)%3;
+            
+        }else{
+            Scanner sc = new Scanner(Sysytem.in);
+            System.out.println("Enter the value of x and y by space");
+            i = sc.nextInt();
+            j = sc.nextInt();
+        }
+        if(BOARD[i][j] == -10){
+            if(player % 2 ==0){
+                BOARD[i][j] =0;
+            }else{
+                BOARD[i][j] =1;
+                System.out.println("Computer choosing "+i+" "+j);
+                
+            }
+            
+        }else
+            putValue();
+    }
+    
     
 
 
